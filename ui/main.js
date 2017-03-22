@@ -11,7 +11,9 @@ button.onclick=function(){
     	if (request.readyState==XMLHttpRequest.DONE) {
     		//Take some action
     		if (request.status==200) { //status 200 i.e request is in successful state
-    			
+    			var counter=request.responseText;
+    			var span=document.getElementById('count');
+    			span.innerHTML=counter.toString();
     	}
     	//Not done yet
     };
@@ -49,4 +51,4 @@ submit.onclick=function(){
   
   //Make the request.
     request.open('GET','http://georgekunchattil1992.imad.hasura-app.io/submit-name?name='+name,true);
-    request.send(null);         
+    request.send(null);  
